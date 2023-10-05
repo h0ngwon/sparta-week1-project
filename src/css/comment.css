@@ -17,18 +17,18 @@
 	width: 25rem;
 	font-size: 1.3rem;
 	border-radius: 1.6rem;
-	border: 1px solid #ccc;
+	border: 1px solid rgb(110, 113, 115);
 	outline: none;
 	padding-left: 0.7rem;
 }
 
 .comment-form input:focus {
-	outline: 0.2rem solid #08d;
+	outline: 0.2rem solid rgb(110, 113, 115);
 	transition: 0.3s ease;
 }
 
 .btn {
-	background-color: #08d;
+	background-color: rgb(110, 113, 115);
 	border-radius: 1.5rem;
 	border: none;
 	outline: none;
@@ -39,21 +39,60 @@
 }
 
 .btn:focus {
-    background-color:rgb(1, 99, 184);
+	width: 100%;
+	background-color: #ccc;
+}
+
+.btn-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    width:80%;
+}
+
+.delete-btn {
+    width:80%;
+	margin-top: 2rem;
+    margin-right: 1rem;
+    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 1rem;
+	background-color: rgb(110, 113, 115);
+	color: #ffffff;
+}
+
+.modify-btn {
+    width:80%;
+	margin-top: 2rem;
+    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 1rem;
+	background-color: rgb(110, 113, 115);
+	color: #ffffff;
 }
 
 .comment {
-    width: 100%;
+	width: 100%;
 }
 
 .comments {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    margin: 5rem auto;
-    padding-bottom: 1rem;
-    outline: 0.4rem solid #ccc;
-    border-radius: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 50%;
+	margin: 5rem auto;
+	padding-bottom: 1rem;
+	outline: 0.4rem solid #ccc;
+	border-radius: 1.5rem;
+}
+
+.comment-name {
+	font-size: 2.5rem;
+}
+
+.comment-content {
+	font-size: 1.5rem;
 }

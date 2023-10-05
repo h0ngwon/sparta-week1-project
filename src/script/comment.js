@@ -37,21 +37,30 @@ const submit = document
 			userPwd: userPwd.value,
 			comment: comment.value,
 		});
+
+		window.location.reload();
 	});
 
 //콜렉션 가져오기
 let docs = await getDocs(collection(db, 'comments'));
 docs.forEach((doc) => {
 	let row = doc.data();
+	console.log(row);
 	const userName = row.userName;
 	const comment = row.comment;
 
 	const commentDiv = document.querySelector('#comment').insertAdjacentHTML(
-		'afterend',
+		'beforeend',
 		`<div id="comments" class="comments">
-                    <h2 id="comment-name">${userName}</h2>
-                <div id="comment-content">${comment}</div>
-                </div>
+            <h2 class="comment-name">${userName}</h2>
+            <div class="comment-content">${comment}</div>
+            
+            <div class="btn-wrapper">
+                <button class="delete-btn">삭제</button>
+                <button class="modify-btn">수정</button>
+            </div>
+        </div>
+        
                 `
 	);
 });

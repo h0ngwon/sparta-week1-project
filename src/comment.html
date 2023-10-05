@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="./css/comment.css" />
 	</head>
 	<body>
-		<form id="comment-form" class="comment-form">
+		<form id="comment-form" class="comment-form" method="POST" action="">
 			<div>
 				<input type="text" id="userName" placeholder="작성자" />
 			</div>
@@ -23,7 +23,8 @@
 			<button id="submit" class="btn">방명록 추가</button>
 		</form>
 
-		<div id="comment" class="comment"></div>
+		<div id="comment" class="comment">
+        </div>
 
 		<script type="module" src="./script/comment.js"></script>
 	</body>
