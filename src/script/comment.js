@@ -8,6 +8,9 @@ import {
 	doc,
 	deleteDoc,
 	setDoc,
+	query,
+	where,
+	onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 
 // Firebase 구성 정보 설정
@@ -37,10 +40,7 @@ const submit = document
 	.addEventListener('submit', async (e) => {
 		e.preventDefault();
 
-		let cnt = document.getElementsByClassName('comment-name').length;
-
 		const info = {
-			id: cnt,
 			userName: userName.value,
 			userPwd: userPwd.value,
 			comment: comment.value,
@@ -71,7 +71,6 @@ docs.forEach((doc) => {
             
             <form class="btn-wrapper-form" id="btn-form">
                 <button class="delete-btn" id="delete-btn" type="button">삭제</button>
-                <button class="modify-btn">수정</button>
             </form>
         </div>`
 	);
@@ -80,13 +79,20 @@ docs.forEach((doc) => {
 //콜렉션 데이터 삭제
 const btns = document.querySelectorAll('button[id^=delete-btn]');
 btns.forEach((btn) => {
-	btn.addEventListener('click', (e) => {
+	btn.addEventListener('click', async (e) => {
 		e.preventDefault();
 
 		let userName =
 			btn.parentNode.parentNode.firstChild.nextSibling.textContent;
 
-		console.log(data);
-		
+		let queryRef = collection(db, 'comments');
+		let q = query(queryRef, where('userName', '==', userName));
+		let querySnapshot = await getDocs(q);
+
+		querySnapshot.forEach(async (d) => {
+			await deleteDoc(doc(db, 'comments', d.id)).then(() =>
+				window.location.reload()
+			);
+		});
 	});
 });
