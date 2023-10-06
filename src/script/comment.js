@@ -3,8 +3,12 @@ import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase
 import {
 	collection,
 	addDoc,
+	getDocs,
+	updateDoc,
+	doc,
+	deleteDoc,
+	setDoc,
 } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
-import { getDocs } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 
 // Firebase 구성 정보 설정
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -23,6 +27,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 //콜렉션에 데이터 추가
+let data = [];
 const userName = document.getElementById('userName');
 const userPwd = document.getElementById('userPwd');
 const comment = document.getElementById('userComment');
@@ -32,11 +37,18 @@ const submit = document
 	.addEventListener('submit', async (e) => {
 		e.preventDefault();
 
-		await addDoc(collection(db, 'comments'), {
+		let cnt = document.getElementsByClassName('comment-name').length;
+
+		const info = {
+			id: cnt,
 			userName: userName.value,
 			userPwd: userPwd.value,
 			comment: comment.value,
-		});
+		};
+		//setDoc(doc(db, "comments", cnt), info);
+		await addDoc(collection(db, 'comments'), info).then((d) =>
+			console.log(d.id)
+		);
 
 		window.location.reload();
 	});
@@ -45,22 +57,36 @@ const submit = document
 let docs = await getDocs(collection(db, 'comments'));
 docs.forEach((doc) => {
 	let row = doc.data();
-	console.log(row);
+	data.push(row);
+	//console.log(data);
+
 	const userName = row.userName;
 	const comment = row.comment;
 
 	const commentDiv = document.querySelector('#comment').insertAdjacentHTML(
 		'beforeend',
 		`<div id="comments" class="comments">
-            <h2 class="comment-name">${userName}</h2>
+            <h2 class="comment-name" id="comment-name">${userName}</h2>
             <div class="comment-content">${comment}</div>
             
-            <div class="btn-wrapper">
-                <button class="delete-btn">삭제</button>
+            <form class="btn-wrapper-form" id="btn-form">
+                <button class="delete-btn" id="delete-btn" type="button">삭제</button>
                 <button class="modify-btn">수정</button>
-            </div>
-        </div>
-        
-                `
+            </form>
+        </div>`
 	);
+});
+
+//콜렉션 데이터 삭제
+const btns = document.querySelectorAll('button[id^=delete-btn]');
+btns.forEach((btn) => {
+	btn.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		let userName =
+			btn.parentNode.parentNode.firstChild.nextSibling.textContent;
+
+		console.log(data);
+		
+	});
 });

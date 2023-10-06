@@ -36,41 +36,61 @@
 	height: 100%;
 	font-size: 1.5rem;
 	color: #ffffff;
+	transition: 0.2s ease;
+}
+
+.btn:hover {
+	background-color: #554c4c;
+	transition: 0.2s ease;
 }
 
 .btn:focus {
-	width: 100%;
+	width: 25rem;
 	background-color: #ccc;
 }
 
-.btn-wrapper {
+.btn-wrapper-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    width:80%;
+	width: 80%;
 }
 
 .delete-btn {
-    width:80%;
+	width: 80%;
 	margin-top: 2rem;
-    margin-right: 1rem;
-    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
+	margin-right: 1rem;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	font-size: 1.5rem;
 	border: none;
 	border-radius: 1rem;
 	background-color: rgb(110, 113, 115);
 	color: #ffffff;
+	cursor: pointer;
+	transition: 0.2s ease-in;
+}
+
+.delete-btn:hover {
+	background-color: #554c4c;
+	transition: 0.2s ease;
 }
 
 .modify-btn {
-    width:80%;
+	width: 80%;
 	margin-top: 2rem;
-    padding : 0.5rem 0.5rem 0.5rem 0.5rem;
+	padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 	font-size: 1.5rem;
 	border: none;
 	border-radius: 1rem;
 	background-color: rgb(110, 113, 115);
 	color: #ffffff;
+	transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.modify-btn:hover {
+	background-color: #554c4c;
+	transition: 0.2s ease;
 }
 
 .comment {
