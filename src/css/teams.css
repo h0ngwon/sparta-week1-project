@@ -1,0 +1,48 @@
+header {
+  background-color: black;
+}
+
+#title {
+  color: white;
+
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 30px;
+
+  margin: auto 20px auto 20px;
+}
+
+.nav-link {
+  color: white;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 15px;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto 50px auto;
+}
+
+#photo {
+  border-radius: 5px;
+}
+
+.content {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  margin: 10px auto 50px auto;
+
+  border-radius: 5px;
+
+  box-shadow: 0px 0px 3px 0px gray;
+
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+#name {
+  font-size: 20px;
+  font-weight: bold;
+}
