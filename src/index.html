@@ -1,13 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>일어나 코딩해야조</title>
+    <script src="script/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Diphylleia&family=Dongle&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .mytitle {
+            font-size: 75px;
+
+
+            height: 420px;
+            color: rgb(95, 27, 0);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .mytitle_img {
+            width: 170px;
+            height: 235px;
+            object-fit: cover;
+        }
+
+        .subtitle {
+            font-size: 32px;
+
+            height: 300px;
+            color: rgb(99, 48, 6);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+        }
+
+        .textfile {
+            font-size: 20px;
+
+            height: 100px;
+            color: rgb(82, 53, 15);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .navbar {
+            font-size: 18px;
+            padding: 0px 100px 0px 0px;
+
+            height: 0px;
+            color: rgb(223, 150, 68);
+
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            text-align: center;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .navbar li {
+            list-style: none;
+            padding: 30px;
+        }
+        
+        .page-top {
+            position: fixed;
+            bottom: 0px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            
+            text-decoration: none;
+            color: rgb(223, 150, 68);
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body>
-    <h1>메인페이지</h1>
-    <a href="./teams.html">개인페이지</a>
-    <a href="./comment.html">방명록</a>
-</body>
-</html>
+
+<body style="background-color: rgba(236, 220, 202, 0.87)">
+    <div class="mytitle">
+        <h1>일어나코딩해야조</h1>
+        <img src="https://lh3.googleusercontent.com/fife/AK0iWDx8r8UZ2BtS2Z1RVOGpz4yxuTdlLefIehBRmvrMthuOLh82FUkEtqRQypPMwtI7b2PLmFg5WjN25h5CiS-XuzicLeMrsqj-KOOuBSHIpnB_ySIVPMvJuTfxPaqHP0KAqleCm7T-r6-g603KjnBgqBXirIjai7BFpmrPoUrL-mS_iCoyZwVe2JJI85EQcz1pmzLJOAQtIxNba9hb4MYLfbOYWWxqD0v8yLZsKPmhJTrfJNBhwZjFlq-QQPpsFtcksuo_IG1X4lcIMegcB8q6ZX099LzxKIr4LyfN__NpHGGuaN_IJbfW0al752IJRObHw4YmpsSyxrvOUL7T2ujfd4qnomLg2cv-5InzwwotAYv_oboCa7cs-a-Z-DeQCwlAWgcLzOuFCZKJwANVKcZu-83EMpcsn39QoGOUJJx5ECW2KRA9AXhFdBv6MMTsd23I4aIjtZOuFol5Ky39nq6Rt9LEySTtqwKdvzLgvilPFHr3HMMK4_vXxHDhGOAK6cb-ABIFHovlQsJvNMK4Wh4cwUiHvjkMxP6HNibOz4T5D6F5jLYkD8Z4OLnbglJ5EUbqyvGGoydHijn5NF9xEHLHH08uIern7lT0pi5mDarWpnOiSbPt0wclr2ur4ASkidjb-6zh5T0AFiqFaeyj6xrch0EJG90p4-Ch8CUydZ8oiIiLOMMH2Hw3D6UjgAdjNmnlfg9pBHQIEeXsrjHv5ziEN7BNJrsmukkz83URIrso0TpYFfzxjG0ynL1Q47oSZGT-8KT78f8lp7D5LPugqoBfx3iXwPaaEElv0Z4NZKh75hBH5GoPtp5SSItEKLyffGnfOv15S5EGS5-MjnDbUg1WlVCkPZWor23NfqNFjmDSOZpWRorujGg_89V_GDXoHHswsv2x5AL5U82Dkuh_P3UMFXhYSGbJb8jwR-znajks7uY9vKjeXDv1p3Fx9EPB6wtD91MgnHhW04mOciWIyBfomrcq-KV9JFzM3sOBdRq1Tk4LTnIDIjhDJDkG-EGu89YAJFq9TKUkcucl4-r5MzVfW5241xDYJc9y-JBkF2qsWQ89wqP7RGG4bOBr_D5Egj3VTFZik_t4Xa8ujQIrenMd9E2ISKJpJdGIRdlUvC_ou-hWuH6dvUDE7-gNWbIwiFCXOHM7CiKnKdFGzPzcBJEGEfhW4mKCgNL1bigPBO_7uDSlhEtVb5TQ3D98uxhNmaAy1L4yQyvhLmdHggzs3memKaYLljsgMeLIS3OGDSO7SadehQbL5k_i5arye4cOr2dUQCjzkbvxNQP5OOxYqCNW0U7iLYuMfljnlZipu-VirAD7HcdWqCL73-gptS91EFOiC97oiGl9RkxwcodQLNrj4Olgk6wiHaYvAATFCtLNVSPWm0isf8OIBekMvcxj0AUYWQwLq0-mFacnRK4b-SPQWT_0wc_xCpiPVLADbXvNaPENDMvDOBkVM3xYprZPwBQ7eZhrjvzZvXqHYrpRkQGTM1zMpXhKmmzkcifh1G6Du4d76yobA00E6p_wGTrC67_bKr2o3cS29OlJKbxpufiKLB7grwU0HzXuK1VkQIqHiSt6ZoAKtxWkUPhr=w1920-h478"
+            class="mytitle_img">
+    </div>
+
+    <nav class="navbar">
+        <ul class="navbar justify-content-center">
+            <li><a href="./teams.html" class="navbar-link">개인페이지</a></li>
+            <li><a href="./comment.html" class="navbar-link">방명록</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <h2 class="subtitle">
+            <b>일어나코딩해야조..<br>
+                를 소개합니다!</b>
+        </h2>
+
+        <p class="textfile">
+            밥먹고 자는시간빼고 코딩하는조 입니다.
+        </p>
+    </div>
+
+	<div>
+		<a href="#" class="page-top">TOP</a>
+	</div>
+
+    
+    <section id="section">
+        <div class="article1">
+            <div class="inner">
+                <div class="aboutus">
+                    <h1>우리 조원들을 소개합니다</h1>
+                </div>
+                    <ul class="teammate cf">
+                        <li>
+                            <a href="./teams.html">
+                                <img src="assets/limhongwon.jpg" alt="임홍원">
+                                <h2>임홍원</h2>
+                                <h3>MBTI</h3>
+                                <p>자기소개글</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./teams.html">
+                                <img src="assets/Ahneunji.png" alt="안은지">
+                                <h2>안은지</h2>
+                                <h3>MBTI</h3>
+                                <p>자기소개글</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./teams.html">
+                                <img src="assets/kimsekwan.jpg" alt="김세관">
+                                <h2>김세관</h2>
+                                <h3>MBTI : ESTP</h3>
+                                <p>찬밥 더운밥 가리지 않고 열심히 해보겠습니다닷!</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="teammate cf2">
+                        <li>
+                            <a href="./teams.html">
+                                <img src="assets/minyesole.jpg" alt="민예솔">
+                                <h2>민예솔</h2>
+                                <h3>MBTI</h3>
+                                <p>자기소개글</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./teams.html">
+                                <img src="assets/parkchanho.jpg" alt="박찬호">
+                                <h2>박찬호</h2>
+                                <h3>MBTI</h3>
+                                <p>자기소개글</p>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+
+
