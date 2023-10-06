@@ -9,21 +9,35 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+
+    <!-- 폰트링크 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Serif+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Serif+KR&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css링크 -->
     <link href="./css/teams.css" rel="stylesheet" />
-    <title>Document</title>
+
+    <title>개인페이지</title>
   </head>
   <body>
     <header
       class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
     >
       <a
-        href="메인페이지 링크"
+        href="./index.html"
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
-        <svg class="bi me-2" width="40" height="32">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-        <span class="fs-4">일어나 코딩해야조</span>
+        <span id="title">일어나 코딩해야조</span>
       </a>
 
       <ul class="nav nav-pills">
@@ -46,15 +60,23 @@
     </header>
 
     <main>
-      <section>
-        <img src="이미지" alt="image" />
-        <p>이름</p>
-        <p>소개글</p>
-      </section>
-      <section>
-        <button type="button" class="btn btn-outline-primary">
-          메인 페이지로
-        </button>
+      <section id="card">
+        <section>
+          <img
+            id="photo"
+            src="https://picsum.photos/300/300/?image=100"
+            alt="sample-image"
+          />
+        </section>
+        <section class="content">
+          <p id="name">이름</p>
+          <hr />
+          <p>소개글</p>
+        </section>
+
+        <a href="./index.html"
+          ><button type="button" class="btn btn-dark">메인 페이지로</button></a
+        >
       </section>
     </main>
   </body>
