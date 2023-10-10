@@ -71,16 +71,16 @@ body {
 
 .navbar-link {
 	text-decoration: none;
-	color: var(--text-color);
+	color: #615555;
+}
+
+.navbar-link:hover {
+    color: #9f5a5a;
 }
 
 .navbar li {
 	list-style: none;
 	padding: 30px;
-}
-
-.navbar li:hover {
-    color: rgb(189, 111, 21);
 }
 
 .page-top {
