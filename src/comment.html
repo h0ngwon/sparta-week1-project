@@ -9,22 +9,42 @@
 	<body>
 		<form id="comment-form" class="comment-form" method="POST" action="">
 			<div>
-				<input type="text" id="userName" placeholder="작성자" required/>
+				<input
+					type="text"
+					id="userName"
+					placeholder="작성자"
+					required
+				/>
 			</div>
 
 			<div>
-				<input type="password" id="userPwd" placeholder="비밀번호" required/>
+				<input
+					type="password"
+					id="userPwd"
+					placeholder="비밀번호"
+					required
+				/>
 			</div>
 
 			<div>
-				<input type="text" id="userComment" placeholder="내용" required/>
+				<input
+					type="text"
+					id="userComment"
+					placeholder="내용"
+					required
+				/>
 			</div>
 
 			<button id="submit" class="btn">방명록 추가</button>
 		</form>
 
-		<div id="comment" class="comment">
-        </div>
+		<div id="comment" class="comment"></div>
+
+		<a href="./index.html"
+			><button type="button" class="btn btn-dark">
+				메인 페이지로
+			</button></a
+		>
 
 		<script type="module" src="./script/comment.js"></script>
 	</body>

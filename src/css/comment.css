@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Diphylleia&family=Dongle&family=Gowun+Dodum&family=Hi+Melody&family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap');
+
+* {
+	font-family: 'Gowun Dodum', sans-serif;
+}
+
 .comment-form {
 	display: flex;
 	justify-content: center;
@@ -85,7 +91,7 @@
 	background-color: rgb(110, 113, 115);
 	color: #ffffff;
 	transition: 0.2s ease;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .modify-btn:hover {
