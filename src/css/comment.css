@@ -4,6 +4,10 @@
 	font-family: 'Gowun Dodum', sans-serif;
 }
 
+:root {
+	--teamColor: black;
+}
+
 .comment-form {
 	display: flex;
 	justify-content: center;
@@ -23,18 +27,18 @@
 	width: 25rem;
 	font-size: 1.3rem;
 	border-radius: 1.6rem;
-	border: 1px solid rgb(110, 113, 115);
+	border: 0.15rem solid var(--teamColor);
 	outline: none;
 	padding-left: 0.7rem;
 }
 
 .comment-form input:focus {
-	outline: 0.2rem solid rgb(110, 113, 115);
+	outline: 0.25rem solid var(--teamColor);
 	transition: 0.3s ease;
 }
 
 .btn {
-	background-color: rgb(110, 113, 115);
+	background-color: var(--teamColor);
 	border-radius: 1.5rem;
 	border: none;
 	outline: none;
@@ -55,6 +59,27 @@
 	background-color: #ccc;
 }
 
+.btn-link {
+	position: fixed;
+	background-color: var(--teamColor);
+	border-radius: 1.5rem;
+	border: none;
+	outline: none;
+	bottom: 0;
+    right: 0;
+	margin: 1rem;
+	width: 7rem;
+	height: 3rem;
+	font-size: 1rem;
+    color: white;
+}
+
+.btn-link:hover {
+	background-color: #ccc;
+	width: 7rem;
+	height: 3rem;
+}
+
 .btn-wrapper-form {
 	display: flex;
 	justify-content: center;
@@ -70,14 +95,14 @@
 	font-size: 1.5rem;
 	border: none;
 	border-radius: 1rem;
-	background-color: rgb(110, 113, 115);
+	background-color: var(--teamColor);
 	color: #ffffff;
 	cursor: pointer;
 	transition: 0.2s ease-in;
 }
 
 .delete-btn:hover {
-	background-color: #554c4c;
+	background-color: rgb(110, 113, 115);
 	transition: 0.2s ease;
 }
 
@@ -111,7 +136,7 @@
 	width: 50%;
 	margin: 5rem auto;
 	padding-bottom: 1rem;
-	outline: 0.4rem solid #ccc;
+	outline: 0.4rem solid var(--teamColor);
 	border-radius: 1.5rem;
 }
 

@@ -32,7 +32,6 @@ const db = getFirestore(app);
 //콜렉션에 데이터 추가
 let data = [];
 const userName = document.getElementById('userName');
-const userPwd = document.getElementById('userPwd');
 const comment = document.getElementById('userComment');
 
 const submit = document
@@ -42,7 +41,6 @@ const submit = document
 
 		const info = {
 			userName: userName.value,
-			userPwd: userPwd.value,
 			comment: comment.value,
 		};
 		//setDoc(doc(db, "comments", cnt), info);
