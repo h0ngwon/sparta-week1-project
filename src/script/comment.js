@@ -112,8 +112,12 @@ const deleteCommentBtn = document
 			where('userPwd', '==', deletePwd)
 		);
 		let querySnapshot = await getDocs(q);
-        
-		console.log(querySnapshot);
+
+		if (querySnapshot.empty) {
+			document
+				.getElementById('delete-comment-pwd')
+				.classList.add('wrong');
+		}
 
 		querySnapshot.forEach(async (d) => {
 			await deleteDoc(doc(db, 'comments', d.id)).then(() =>
@@ -126,5 +130,19 @@ const deleteCommentBtn = document
 const closeModalBtn = document.querySelector('.close-modal-btn');
 closeModalBtn.addEventListener('click', (e) => {
 	const modal = document.querySelector('.modal');
+
 	modal.classList.toggle('show');
+	document.getElementById('delete-comment-pwd').classList.remove('wrong');
+	document.getElementById('delete-comment-pwd').value = '';
+});
+
+const modalBackground = document.querySelector('.modal');
+modalBackground.addEventListener('click', (e) => {
+	const modal = document.querySelector('.modal');
+
+	if (e.target === modal) {
+		modal.classList.toggle('show');
+		document.getElementById('delete-comment-pwd').classList.remove('wrong');
+		document.getElementById('delete-comment-pwd').value = '';
+	}
 });
