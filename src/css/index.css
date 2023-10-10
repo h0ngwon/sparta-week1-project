@@ -11,14 +11,14 @@
 }
 
 body {
-    background-color: rgba(240, 230, 219, 0.87);
+    background-color: white;
 }
 
 .mytitle {
 	font-size: 75px;
 
 	height: 420px;
-	color: rgb(95, 27, 0);
+	color: black;
 
 	display: flex;
 	align-items: center;
@@ -34,7 +34,7 @@ body {
 	font-size: 32px;
 
 	height: 300px;
-	color: rgb(99, 48, 6);
+	color: black;
 
 	display: flex;
 	flex-direction: column;
@@ -47,7 +47,7 @@ body {
 	font-size: 20px;
 
 	height: 100px;
-	color: rgb(82, 53, 15);
+	color: black;
 
 	display: flex;
 	flex-direction: column;
@@ -80,7 +80,7 @@ body {
 }
 
 .navbar li:hover {
-    color: rgb(169, 101, 24);
+    color: rgb(189, 111, 21);
 }
 
 .page-top {
@@ -189,7 +189,7 @@ body {
 
 .aboutus {
 	text-align: center;
-	color: rgb(99, 48, 6);
+	color: black;
 	font-size: 30px;
 	font-weight: 800;
 	margin: 50px;
@@ -197,18 +197,27 @@ body {
 .article1 .inner .teammate li {
 	text-align: left;
 	margin: 0 0 50px 100px;
-	width: 400px;
-	border: 3px solid rgb(77, 37, 5);
+	width: 25rem;
+	border: 3px solid black;
 	border-radius: 5px;
+    transition: 0.3s ease;
 }
+
+.article1 .inner .teammate li:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
 .article1 .inner .teammate li h2 {
+    width:100%;
 	text-align: center;
 	padding: 30px;
-	margin: 0 0 30px 45px;
-	background-color: rgb(99, 48, 6);
+	background-color: black;
 	color: #fff;
 	border-radius: 5px;
 }
+
+
 .article1 .inner .cf,
 .cf2 {
 	display: flex;
@@ -228,7 +237,7 @@ body {
 }
 
 .cf2 h2 {
-    width: 19rem;
+    width: 17rem;
 }
 
 .article1 .inner .teammate li h3,
