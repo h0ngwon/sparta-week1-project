@@ -32,6 +32,7 @@ const db = getFirestore(app);
 //콜렉션에 데이터 추가
 let data = [];
 const userName = document.getElementById('userName');
+const userPwd = document.getElementById('userPwd');
 const comment = document.getElementById('userComment');
 
 const submit = document
@@ -41,6 +42,7 @@ const submit = document
 
 		const info = {
 			userName: userName.value,
+			userPwd: userPwd.value,
 			comment: comment.value,
 		};
 		//setDoc(doc(db, "comments", cnt), info);
@@ -59,6 +61,7 @@ docs.forEach((doc) => {
 	//console.log(data);
 
 	const userName = row.userName;
+	const userPwd = row.userPwd;
 	const comment = row.comment;
 
 	const commentDiv = document.querySelector('#comment').insertAdjacentHTML(
@@ -75,17 +78,42 @@ docs.forEach((doc) => {
 });
 
 //콜렉션 데이터 삭제
+let deleteUser;
 const btns = document.querySelectorAll('button[id^=delete-btn]');
 btns.forEach((btn) => {
-	btn.addEventListener('click', async (e) => {
-		e.preventDefault();
+	btn.addEventListener('click', (e) => {
+		const modal = document.querySelector('.modal');
+		modal.classList.toggle('show');
 
-		let userName =
+		deleteUser =
 			btn.parentNode.parentNode.firstChild.nextSibling.textContent;
 
+		// let queryRef = collection(db, 'comments');
+		// let q = query(queryRef, where('userName', '==', userName));
+		// let querySnapshot = await getDocs(q);
+		// console.log(querySnapshot);
+
+		// querySnapshot.forEach(async (d) => {
+		// 	await deleteDoc(doc(db, 'comments', d.id)).then(() =>
+		// 		window.location.reload()
+		// 	);
+		// });
+	});
+});
+
+const deleteCommentBtn = document
+	.querySelector('.delete-pwd-btn')
+	.addEventListener('click', async (e) => {
+		const deletePwd = document.getElementById('delete-comment-pwd').value;
 		let queryRef = collection(db, 'comments');
-		let q = query(queryRef, where('userName', '==', userName));
+		let q = query(
+			queryRef,
+			where('userName', '==', deleteUser),
+			where('userPwd', '==', deletePwd)
+		);
 		let querySnapshot = await getDocs(q);
+        
+		console.log(querySnapshot);
 
 		querySnapshot.forEach(async (d) => {
 			await deleteDoc(doc(db, 'comments', d.id)).then(() =>
@@ -93,4 +121,10 @@ btns.forEach((btn) => {
 			);
 		});
 	});
+
+//모달 관련
+const closeModalBtn = document.querySelector('.close-modal-btn');
+closeModalBtn.addEventListener('click', (e) => {
+	const modal = document.querySelector('.modal');
+	modal.classList.toggle('show');
 });

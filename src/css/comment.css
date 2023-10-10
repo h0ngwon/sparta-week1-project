@@ -4,6 +4,10 @@
 	font-family: 'Gowun Dodum', sans-serif;
 }
 
+body {
+	overflow: auto;
+}
+
 :root {
 	--teamColor: black;
 }
@@ -66,12 +70,12 @@
 	border: none;
 	outline: none;
 	bottom: 0;
-    right: 0;
+	right: 0;
 	margin: 1rem;
 	width: 7rem;
 	height: 3rem;
 	font-size: 1rem;
-    color: white;
+	color: white;
 }
 
 .btn-link:hover {
@@ -146,4 +150,72 @@
 
 .comment-content {
 	font-size: 1.5rem;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+	display: block;
+}
+
+.modal-body {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 30rem;
+	height: 20rem;
+	background-color: rgb(255, 255, 255);
+	border-radius: 1.2rem;
+	text-align: center;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.close-modal-btn {
+	margin: 1rem auto;
+	width: 10rem;
+	border: none;
+	background-color: black;
+	color: white;
+	border-radius: 0.5rem;
+}
+
+.delete-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 50%;
+    margin-top: 3rem;
+}
+
+.delete-pwd-input {
+	width: 15rem;
+	height: 5rem;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	border-radius: 1.3rem;
+	border: 0.25rem solid black;
+}
+
+.delete-pwd-input:hover {
+	outline: none;
+}
+
+.delete-pwd-btn {
+	width: 5rem;
+	height: 3rem;
+	background-color: black;
+	color: white;
+	font-size: 1.3rem;
+	outline: none;
+	border-radius: 1.2rem;
 }

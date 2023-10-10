@@ -17,6 +17,15 @@
 				/>
 			</div>
 
+            <div>
+				<input
+					type="password"
+					id="userPwd"
+					placeholder="비밀번호"
+					required
+				/>
+			</div>
+
 			<div>
 				<input
 					type="text"
@@ -28,6 +37,16 @@
 
 			<button id="submit" class="btn">방명록 추가</button>
 		</form>
+
+		<div class="modal">
+			<div class="modal-body">
+				<button class="close-modal-btn">X</button>
+				<form id="delete-form" class="delete-form">
+                    <input type="text" placeholder="비밀번호" class="delete-pwd-input" id="delete-comment-pwd">
+                    <button type="button" class="delete-pwd-btn">삭제</button>
+                </form>
+			</div>
+		</div>
 
 		<div id="comment" class="comment">
 			<a href="./index.html"
