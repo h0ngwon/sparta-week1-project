@@ -42,8 +42,19 @@
 			<div class="modal-body">
 				<button class="close-modal-btn">X</button>
 				<form id="delete-form" class="delete-form">
-                    <input type="text" placeholder="비밀번호" class="delete-pwd-input" id="delete-comment-pwd">
+                    <input type="text" placeholder="비밀번호" class="delete-pwd-input" id="delete-comment-pwd" required>
                     <button type="button" class="delete-pwd-btn">삭제</button>
+                </form>
+			</div>
+		</div>
+
+        <div class="modal-modify">
+			<div class="modal-modify-body">
+				<button class="close-modify-modal-btn">X</button>
+				<form id="modify-form" class="modify-form">
+                    <input type="text" placeholder="비밀번호" class="modify-pwd-input" id="modify-comment-pwd-input" required>
+                    <input type="text" placeholder="수정내용" class="modify-comment-input" id="modify-comment-input" required>
+                    <button type="button" class="modify-comment-btn">수정</button>
                 </form>
 			</div>
 		</div>
