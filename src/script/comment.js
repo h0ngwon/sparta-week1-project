@@ -13,10 +13,12 @@ import {
 	onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
 
+const key = API_KEY;
+
 // Firebase 구성 정보 설정
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-	apiKey: 'AIzaSyBdoC4sXfxqxom-hnRTx7HKg9-K4986jHE',
+	apiKey: key,
 	authDomain: 'sparta-week1.firebaseapp.com',
 	projectId: 'sparta-week1',
 	storageBucket: 'sparta-week1.appspot.com',
